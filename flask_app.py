@@ -19,12 +19,12 @@ def get_file(filename):  # pragma: no cover
         # - render_template
         # - send_file
         # This should not be so non-obvious
-        return open(src).read()
+        return open(src,'rb').read()
     except IOError as exc:
         return str(exc)
 
 
-@app.route('/', defaults={'path': ''})
+@app.route('/', defaults={'path': 'index.html'})
 @app.route('/<path:path>')
 def get_resource(path):  # pragma: no cover
     mimetypes = {
@@ -35,8 +35,7 @@ def get_resource(path):  # pragma: no cover
         ".png": "image/png",
         ".pdf": "application/pdf",
     }
-    complete_path = os.path.join(root_dir(), path)
     ext = os.path.splitext(path)[1]
     mimetype = mimetypes.get(ext, "text/html")
-    content = get_file(complete_path)
+    content = get_file(path)
     return Response(content, mimetype=mimetype)
