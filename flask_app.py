@@ -24,12 +24,6 @@ def get_file(filename):  # pragma: no cover
         return str(exc)
 
 
-@app.route('/', methods=['GET'])
-def metrics():  # pragma: no cover
-    content = get_file('jenkins_analytics.html')
-    return Response(content, mimetype="text/html")
-
-
 @app.route('/', defaults={'path': ''})
 @app.route('/<path:path>')
 def get_resource(path):  # pragma: no cover
