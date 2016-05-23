@@ -1,0 +1,23 @@
+div.thumb {
+    width: 100%;
+    height: 100%;
+    display: inline-block;
+    cursor: pointer;
+    background-clip: content-box;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+}
+
+md-grid-tile-footer {
+    padding-left: 10px;
+}
+
+.page-container .content
+    margin: 10px;
+}
+
+/*
+Copyright 2016 Google Inc. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that can be in foundin the LICENSE file at http://material.angularjs.org/license.
+*/
