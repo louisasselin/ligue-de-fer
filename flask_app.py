@@ -19,7 +19,7 @@ def get_file(filename):  # pragma: no cover
         # - render_template
         # - send_file
         # This should not be so non-obvious
-        return open(src,mode='rb').read()
+        return open(src,'rb').read()
     except IOError as exc:
         return str(exc)
 
